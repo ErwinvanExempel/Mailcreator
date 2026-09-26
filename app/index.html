@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MailCreator</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Roboto:wght@400;500;700&display=swap');
+:root{--ink:#101114;--muted:#74767b;--line:#dedfe1;--red:#b21b17;--soft:#f8e8e7;font-family:Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink)}*{box-sizing:border-box}body{margin:0;min-width:1120px;background:radial-gradient(circle at 85% 0,#fff,#f1f1f1 36rem)}button,input,textarea{font:inherit}button{cursor:pointer}.app-header{min-height:88px;padding:18px 42px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line)}.brand-lockup,.header-actions,.panel-heading,.section-heading-row,.preview-toolbar,.form-grid{display:flex;align-items:center}.brand-lockup{gap:13px}.brand-mark{width:42px;height:42px;display:grid;place-items:center;background:var(--red);color:#fff;font:700 28px/1 "Barlow Condensed",Impact,sans-serif}.eyebrow{margin:0 0 3px;color:var(--red);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}h1,h2,h3,p{margin-top:0}h1{margin-bottom:0;font:700 25px/1 "Barlow Condensed",Impact,sans-serif;text-transform:uppercase}h2{margin:0;font:700 30px/1 "Barlow Condensed",Impact,sans-serif;text-transform:uppercase}.header-actions{gap:12px}.draft-status{margin-right:10px;color:var(--muted);font-size:12px}.button{border:0;padding:12px 17px;font-size:12px;font-weight:700}.button-primary{background:var(--red);color:#fff}.button-primary:hover{background:#7d1313}.button-secondary{border:1px solid var(--line);background:#fff;color:var(--ink)}.workspace{display:grid;grid-template-columns:minmax(490px,.92fr) minmax(600px,1.08fr);min-height:calc(100vh - 88px)}.editor-panel{padding:42px;background:#fafafa;border-right:1px solid var(--line)}.panel-heading,.preview-toolbar{justify-content:space-between;gap:24px}.step-label{padding:7px 9px;background:var(--soft);color:var(--red);font-size:10px;font-weight:700;text-transform:uppercase}.progress-track{height:3px;margin:27px 0 34px;background:#e4e4e4}.progress-track span{display:block;width:50%;height:100%;background:var(--red)}.form-section{margin:0;padding:0 0 32px;border:0;border-bottom:1px solid var(--line)}.form-section+.form-section{padding-top:30px}.form-section legend{font-size:15px;font-weight:700}.section-intro{margin:7px 0 20px;color:var(--muted);font-size:12px;line-height:1.5}.field{display:block;margin-top:17px}.field>span{display:block;margin-bottom:7px;font-size:11px;font-weight:700}input,textarea{width:100%;border:1px solid #d6d7d9;padding:12px 13px;background:#fff;color:var(--ink);font-size:13px;outline:0}textarea{resize:vertical;line-height:1.55}input:focus,textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px var(--soft)}.character-count{display:block;margin-top:5px;color:var(--muted);text-align:right;font-size:10px}.section-heading-row{justify-content:space-between;align-items:flex-start}.icon-button{width:32px;height:32px;border:0;background:var(--red);color:#fff;font-size:24px}.story-list{display:grid;gap:12px}.story-card{padding:17px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--red)}.story-card-header{display:flex;justify-content:space-between;gap:12px}.story-number{color:var(--red);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.text-button{border:0;padding:3px;background:transparent;color:var(--muted);font-size:11px;text-decoration:underline}.form-grid{align-items:flex-start;gap:16px}.form-grid .field{flex:1}.file-input{padding:9px;color:var(--muted);font-size:11px}.image-name{display:block;margin-top:5px;color:var(--red);font-size:10px}.field-hint{display:block;margin-top:6px;color:var(--muted);font-size:10px}.preview-panel{padding:42px;background:#e7e7e7}.preview-mode{display:flex;gap:3px;padding:3px;background:#d8d8d8}.mode-button{border:0;padding:8px 11px;background:transparent;color:#666;font-size:11px}.mode-button.is-active{background:#fff;color:var(--ink);font-weight:700}.preview-stage{min-height:700px;margin-top:29px;padding:34px;display:flex;justify-content:center;align-items:flex-start;background:#d5d5d5}.email-preview{width:660px;max-width:100%;background:#fff;box-shadow:0 20px 55px #1011141a}.email-preview.is-mobile{width:390px}.email-preheader{padding:8px 24px;color:#777;background:#f4f4f4;text-align:center;font-size:10px}.email-header{min-height:130px;padding:24px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;background:var(--red);color:#fff}.email-logo{display:block;width:58px;height:auto}.email-brand{font-size:12px;letter-spacing:.08em}.email-brand strong{font-weight:700}.email-content{padding:36px 42px 46px;font-size:16px;line-height:1.5}.email-content h3{margin-bottom:24px;font:700 31px/1.15 Roboto,"Helvetica Neue",Arial,sans-serif}.story-preview{margin-top:36px;padding-top:30px;border-top:5px solid var(--red)}.story-preview img{display:block;width:100%;height:auto;max-height:230px;object-fit:cover;margin-bottom:22px}.story-preview h4{margin:0 0 9px;font:700 20px/1.35 Roboto,"Helvetica Neue",Arial,sans-serif}.story-preview p{margin-bottom:13px}.story-preview a{color:var(--red);font-weight:700}.email-footer{padding:29px 42px 35px;background:#111;color:#fff;text-align:center;font-size:12px;line-height:1.5}.email-footer p{margin:10px 0 0;color:#d0d0d0}.footer-links{display:flex;justify-content:center;gap:18px;margin-top:13px}.email-footer a{color:#fff;text-decoration:underline}.preview-note{margin:14px 0 0;color:#777;font-size:11px;text-align:center}.toast{position:fixed;right:28px;bottom:28px;padding:13px 17px;background:var(--ink);color:#fff;font-size:12px;opacity:0;transform:translateY(12px);transition:.2s}.toast.is-visible{opacity:1;transform:translateY(0)}@media(max-width:1180px){body{min-width:0}.app-header{padding:18px 24px}.workspace{grid-template-columns:minmax(420px,.9fr) minmax(520px,1.1fr)}.editor-panel,.preview-panel{padding-left:24px;padding-right:24px}}
+</style>
+</head>
+<body>
+<header class="app-header"><div class="brand-lockup"><div class="brand-mark" id="tool-brand-mark">E</div><div><p class="eyebrow" id="tool-eyebrow">Drumfanfare Exempel</p><h1>MailCreator</h1></div></div><div class="header-actions"><span class="draft-status" id="draft-status">Nieuwe nieuwsbrief</span><button class="button button-secondary" id="new-newsletter" type="button">Opnieuw beginnen</button><button class="button button-secondary" id="save-draft" type="button">Concept opslaan</button><button class="button button-primary" id="download-eml" type="button">.eml downloaden</button></div></header>
+<main class="workspace"><section class="editor-panel"><div class="panel-heading"><div><p class="eyebrow">Nieuwsbrief opstellen</p><h2>Bouw je verhaal</h2></div><span class="step-label">Stap 1 van 2</span></div><div class="progress-track"><span></span></div><form id="newsletter-form"><fieldset class="form-section"><legend>Basisgegevens</legend><p class="section-intro">Deze gegevens openen de nieuwsbrief en zetten de toon.</p><label class="field"><span>Titel</span><input id="newsletter-title" type="text" value="Het nieuwe seizoen is los" maxlength="120"></label><label class="field"><span>Introtekst</span><textarea id="newsletter-intro" rows="5" maxlength="600">Het nieuwe seizoen is begonnen en we hebben er zin in. In deze nieuwsbrief nemen we je mee achter de schermen en vertellen we wat er op de planning staat.</textarea><small class="character-count" id="intro-count"></small></label><label class="field"><span>Previewtekst in de inbox</span><input id="newsletter-preheader" type="text" value="Het nieuwe seizoen is begonnen. Dit staat er op de planning." maxlength="150"><small class="field-hint">Deze tekst ziet de ontvanger naast het onderwerp, vóór het openen van de mail.</small></label></fieldset><fieldset class="form-section"><div class="section-heading-row"><div><legend>Nieuwsitems</legend><p class="section-intro">Voeg verhalen toe in de volgorde waarin ze mogen verschijnen.</p></div><button class="icon-button" id="add-story" type="button" aria-label="Nieuwsitem toevoegen">+</button></div><div id="story-list" class="story-list"></div></fieldset><fieldset class="form-section"><legend>Afzender en footer</legend><div class="form-grid"><label class="field"><span>Afzendernaam</span><input id="sender-name" type="text" value="THEBAND."></label><label class="field"><span>Website</span><input id="sender-website" type="url" value="https://exempel.net"></label></div><label class="field"><span>Uitschrijflink</span><input id="unsubscribe-url" type="url" value="https://exempel.net/uitschrijven"><small class="field-hint">Deze link staat in de footer van het e-mailbestand.</small></label></fieldset></form></section>
+<section class="preview-panel"><div class="preview-toolbar"><div><p class="eyebrow">Live voorbeeld</p><h2>Zo ziet je mail eruit</h2></div><div class="preview-mode"><button class="mode-button is-active" type="button" data-mode="desktop">Desktop</button><button class="mode-button" type="button" data-mode="mobile">Mobiel</button></div></div><div class="preview-stage"><article class="email-preview" id="email-preview"><div class="email-preheader" id="preview-preheader"></div><header class="email-header"><img class="email-logo" id="preview-logo" src="https://www.exempel.net/wp-content/uploads/MailCreatorFiles/Logo%20Exempel.png" alt="Drumfanfare Exempel"><div class="email-brand"><span id="preview-brand-org">EXEMPEL</span><strong>THEBAND.</strong></div></header><div class="email-content"><h3 id="preview-title"></h3><p>Hoi muziekliefhebber,</p><p id="preview-intro"></p><div id="preview-stories"></div></div><footer class="email-footer"><strong id="preview-sender"></strong><p id="preview-org-note">Je ontvangt deze mail omdat je je hebt aangemeld voor nieuws van Drumfanfare Exempel.</p><p id="preview-address">Drumfanfare Exempel · Zandenweg 2 · 5398 KD Maren-Kessel</p><div class="footer-links"><a id="preview-website">exempel.net</a><a id="preview-unsubscribe">Uitschrijven</a><a id="preview-unsubscribe-mail" style="display:none;">Uitschrijven per e-mail</a><a id="preview-preferences" style="display:none;">Voorkeuren wijzigen</a></div></footer></article></div><p class="preview-note">De nieuwsbrief wordt als .eml-bestand gedownload. Het logo wordt via HTTPS geladen.</p></section></main><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const mailCreatorParams=new URLSearchParams(window.location.search);const wordpressMediaEndpoint=mailCreatorParams.get('mc_rest')||'https://www.exempel.net/wp-json/wp/v2/media';const wordpressDraftEndpoint=mailCreatorParams.get('mc_drafts')||'';const wordpressDraftLoadEndpoint=mailCreatorParams.get('mc_draft_load')||'';const wordpressNonce=mailCreatorParams.get('mc_nonce')||'';let wordpressCredentials=null;let currentDraftId=Number(mailCreatorParams.get('mc_draft')||0);
+const mcDefaults={org_name:'Drumfanfare Exempel',accent_color:'#b21b17',tool_logo_url:'',mail_logo_url:'https://www.exempel.net/wp-content/uploads/MailCreatorFiles/Logo%20Exempel.png',sender_name:'THEBAND.',sender_website:'https://exempel.net',unsubscribe_url:'https://exempel.net/uitschrijven',unsubscribe_email:'secretaris@exempel.net',address_line:'Zandenweg 2 · 5398 KD Maren-Kessel',preferences_url:''};
+let mcSettings=mcDefaults;
+try{const mcRaw=mailCreatorParams.get('mc_settings');if(mcRaw)mcSettings={...mcDefaults,...JSON.parse(mcRaw)};}catch(e){console.warn('MailCreator: kon mc_settings niet lezen',e);}
+console.log('MailCreator initialized:', {wordpressMediaEndpoint, wordpressDraftEndpoint, wordpressDraftLoadEndpoint, wordpressNonce, currentDraftId, mcSettings});
+function draftPayload(){
+	return{
+		title:values().title||'Nieuwe nieuwsbrief',
+		newsletter:{
+			...values(),
+			stories:stories.map(story=>({
+				title:story.title||'',
+				body:story.body||'',
+				linkText:story.linkText||'',
+				linkUrl:story.linkUrl||'',
+				image:story.image&&story.image.url?{url:story.image.url,alt:story.image.alt||'',name:story.image.name||''}:null
+			}))
+		}
+	};
+}
+</script>
+<script>
+const logoUrl=mcSettings.mail_logo_url||'https://www.exempel.net/wp-content/uploads/MailCreatorFiles/Logo%20Exempel.png';let stories=[{title:'Achter de schermen bij THEBAND.',body:'Een show ontstaat niet zomaar. We nemen je mee naar de repetities, de muziek en de mensen die samen het verschil maken.',linkText:'Lees het verhaal',linkUrl:'https://exempel.net',image:null},{title:'Kom je kijken?',body:'De agenda staat online. Noteer de volgende taptoe of concertavond alvast in je kalender.',linkText:'Bekijk de agenda',linkUrl:'https://exempel.net/agenda',image:null}];const $=s=>document.querySelector(s),form=$('#newsletter-form'),list=$('#story-list');function esc(v=''){return String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;')}function safeUrl(v){try{const u=new URL(v);return['http:','https:'].includes(u.protocol)?u.href:'#'}catch{return'#'}}function notice(v){const t=$('#toast');t.textContent=v;t.classList.add('is-visible');setTimeout(()=>t.classList.remove('is-visible'),2800)}function values(){return{title:$('#newsletter-title').value.trim(),intro:$('#newsletter-intro').value.trim(),preheader:$('#newsletter-preheader').value.trim(),sender:$('#sender-name').value.trim(),site:$('#sender-website').value.trim(),unsubscribe:$('#unsubscribe-url').value.trim()}}function renderEditor(){list.innerHTML=stories.map((s,i)=>`<article class="story-card" data-i="${i}"><div class="story-card-header"><span class="story-number">Nieuwsitem ${i+1}</span><div><button class="text-button" data-a="up" type="button" ${i?'':'disabled'}>Omhoog</button> <button class="text-button" data-a="down" type="button" ${i<stories.length-1?'':'disabled'}>Omlaag</button> <button class="text-button" data-a="remove" type="button">Verwijderen</button></div></div><label class="field"><span>Kop</span><input data-f="title" value="${esc(s.title)}"></label><label class="field"><span>Tekst</span><textarea data-f="body" rows="4">${esc(s.body)}</textarea></label><div class="form-grid"><label class="field"><span>Linktekst</span><input data-f="linkText" value="${esc(s.linkText)}"></label><label class="field"><span>Link</span><input data-f="linkUrl" value="${esc(s.linkUrl)}"></label></div><label class="field"><span>Afbeelding</span><input class="file-input" data-f="image" type="file" accept="image/jpeg,image/png,image/webp">${s.image?'<small class="image-name">Afbeelding toegevoegd</small>':''}</label></article>`).join('')}function renderPreview(){const v=values();$('#preview-preheader').textContent=v.preheader||'Previewtekst voor de inbox';$('#preview-title').textContent=v.title||'Jouw nieuwsbrief';$('#preview-intro').textContent=v.intro||'Schrijf hier je introtekst.';$('#preview-sender').textContent=v.sender||'THEBAND.';const site=$('#preview-website');site.textContent=v.site.replace(/^https?:\/\//,'')||'exempel.net';site.href=safeUrl(v.site);$('#preview-unsubscribe').href=safeUrl(v.unsubscribe);$('#intro-count').textContent=`${v.intro.length} / 600`;$('#preview-stories').innerHTML=stories.map(s=>`<section class="story-preview">${s.image?(safeUrl(s.linkUrl)!=='#'?`<a href="${safeUrl(s.linkUrl)}"><img src="${s.image.dataUrl||s.image.url}" alt="${esc(s.image.alt)}"></a>`:`<img src="${s.image.dataUrl||s.image.url}" alt="${esc(s.image.alt)}">`):''}<h4>${esc(s.title||'Nieuwsitem')}</h4><p>${esc(s.body||'Schrijf de tekst van dit nieuwsitem.')}</p>${s.linkText?`<a href="${safeUrl(s.linkUrl)}">${esc(s.linkText)} &rarr;</a>`:''}</section>`).join('')}function render(){renderEditor();renderPreview()}
+
+
+list.addEventListener('input',e=>{const c=e.target.closest('.story-card');if(!c)return;const f=e.target.dataset.f;if(f)stories[+c.dataset.i][f]=e.target.value;renderPreview()});list.addEventListener('change',e=>{const c=e.target.closest('.story-card'),file=e.target.files[0];if(!c||e.target.dataset.f!=='image'||!file)return;const r=new FileReader();r.onload=()=>{stories[+c.dataset.i].image={dataUrl:r.result,alt:file.name};render()};r.readAsDataURL(file)});list.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const i=+b.closest('.story-card').dataset.i,a=b.dataset.a;if(a==='remove'&&stories.length>1)stories.splice(i,1);if(a==='up'&&i)[stories[i-1],stories[i]]=[stories[i],stories[i-1]];if(a==='down'&&i<stories.length-1)[stories[i+1],stories[i]]=[stories[i],stories[i+1]];render()});form.addEventListener('input',renderPreview);$('#add-story').addEventListener('click',()=>{stories.push({title:'',body:'',linkText:'Lees meer',linkUrl:'https://exempel.net',image:null});render()});$('#new-newsletter').addEventListener('click',()=>{if(!confirm('Wil je deze nieuwsbrief wissen en opnieuw beginnen?'))return;$('#newsletter-title').value='';$('#newsletter-intro').value='';$('#newsletter-preheader').value='';stories=[{title:'',body:'',linkText:'Lees meer',linkUrl:'https://exempel.net',image:null}];render()});document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-mode]').forEach(x=>x.classList.remove('is-active'));b.classList.add('is-active');$('#email-preview').classList.toggle('is-mobile',b.dataset.mode==='mobile')}));$('#download-eml').addEventListener('click',()=>{const file=new Blob([buildEml()],{type:'message/rfc822'}),link=document.createElement('a');link.href=URL.createObjectURL(file);link.download='exempel-nieuwsbrief.eml';link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000);$('#draft-status').textContent='.eml gedownload';notice('Het .eml-bestand is gedownload. Het logo wordt via HTTPS geladen.')});render();
+</script>
+<script>
+document.querySelector('#save-draft').addEventListener('click',async()=>{
+	console.log('Save draft clicked', {wordpressDraftEndpoint, wordpressNonce, currentDraftId});
+	if(!wordpressDraftEndpoint){
+		console.warn('No draft endpoint configured');
+		notice('Opslaan is alleen beschikbaar binnen de WordPress-plugin.');
+		return;
+	}
+	const button=document.querySelector('#save-draft');
+	button.disabled=true;
+	try{
+		const payload={...draftPayload(),id:currentDraftId||undefined};
+		const jsonString=JSON.stringify(payload);
+		const sizeInKB=(new Blob([jsonString]).size/1024).toFixed(2);
+		console.log('Sending payload:', payload);
+		console.log('Payload size:', sizeInKB, 'KB');
+		const response=await fetch(wordpressDraftEndpoint,{
+			method:'POST',
+			headers:{'Content-Type':'application/json','X-WP-Nonce':wordpressNonce},
+			body:jsonString
+		});
+		console.log('Response received:', {status: response.status, ok: response.ok});
+		const result=await response.json();
+		console.log('Response parsed:', result);
+		if(!response.ok){
+			throw new Error(result.message||result.code||`HTTP ${response.status}`);
+		}
+		currentDraftId=result.id;
+		document.querySelector('#draft-status').textContent=`Concept opgeslagen (#${result.id})`;
+		notice('Concept opgeslagen in WordPress.');
+	}catch(error){
+		console.error('Error saving draft:', error);
+		notice(error.message||'Concept opslaan mislukt.');
+	}finally{
+		button.disabled=false;
+	}
+});
+</script>
+<script>
+document.addEventListener('click',event=>{
+	if(!event.target.closest('#download-eml'))return;
+	const required=[['#newsletter-title','titel'],['#newsletter-intro','introtekst'],['#unsubscribe-url','uitschrijflink']];
+	const missing=required.filter(([selector])=>!document.querySelector(selector)?.value.trim()).map(([,label])=>label);
+	const hasStory=[...document.querySelectorAll('.story-card')].some(card=>card.querySelector('[data-f="title"]')?.value.trim()&&card.querySelector('[data-f="body"]')?.value.trim());
+	if(!hasStory)missing.push('minimaal één volledig nieuwsitem');
+	if(!missing.length)return;
+	event.preventDefault();
+	event.stopImmediatePropagation();
+	notice(`Vul eerst in: ${missing.join(', ')}.`);
+},true);
+</script>
+<script>
+async function uploadImageToWordPress(file){
+	if(!wordpressNonce&&!wordpressCredentials){
+		const username=prompt('WordPress gebruikersnaam voor media-upload:');
+		if(!username)return null;
+		const appPassword=prompt('WordPress applicatiewachtwoord:');
+		if(!appPassword)return null;
+		wordpressCredentials={username,appPassword};
+	}
+	const headers={};
+	let body=file;
+	if(wordpressNonce){
+		headers['X-WP-Nonce']=wordpressNonce;
+		body=new FormData();
+		body.append('image',file,file.name);
+	}else{
+		headers.Authorization=`Basic ${btoa(`${wordpressCredentials.username}:${wordpressCredentials.appPassword}`)}`;
+		headers['Content-Disposition']=`attachment; filename="${file.name.replace(/[^a-zA-Z0-9._-]/g,'_')}"`;
+		headers['Content-Type']=file.type;
+	}
+	const response=await fetch(wordpressMediaEndpoint,{method:'POST',headers,body});
+	if(!response.ok){if(response.status===401||response.status===403)wordpressCredentials=null;throw new Error(`WordPress upload mislukt (${response.status})`)}
+	const media=await response.json();
+	return media.url||media.source_url||media.guid?.rendered||null;
+}
+
+list.addEventListener('change',async e=>{
+	const card=e.target.closest('.story-card'),file=e.target.files[0];
+	if(!card||e.target.dataset.f!=='image'||!file)return;
+	const story=stories[+card.dataset.i];
+	try{
+		story.image={...(story.image||{}),name:file.name,status:'uploading'};
+		render();
+		const url=await uploadImageToWordPress(file);
+		if(!url)throw new Error('Upload geannuleerd');
+		story.image={...story.image,url,dataUrl:url,name:file.name,status:'uploaded',alt:file.name};
+		render();
+		notice('Afbeelding is naar WordPress geupload.');
+	}catch(error){
+		story.image={...story.image,name:file.name,status:'error'};
+		render();
+		notice(error.message||'Afbeelding uploaden mislukt.');
+	}
+});
+</script>
+<script>
+// Bouwt het volledige .eml-bericht: HTML-body en inline artikelafbeeldingen in één multipart/related.
+function buildEml() {
+	const data = values();
+	const crlf = '\r\n';
+	const boundary = `----=_MailCreator_${Date.now()}`;
+	const attachments = [];
+
+	const rows = stories.map((story, index) => {
+		const decoded = story.image ? String(story.image.dataUrl).match(/^data:([^;]+);base64,(.+)$/) : null;
+		let imageTag = '';
+		if (decoded) {
+			const cid = `story-image-${index}@exempel`;
+			const payload = decoded[2].replace(/.{1,76}/g, '$&' + crlf);
+			attachments.push(`--${boundary}${crlf}Content-Type: ${decoded[1]}${crlf}Content-Transfer-Encoding: base64${crlf}Content-ID: <${cid}>${crlf}Content-Disposition: inline${crlf}${crlf}${payload}${crlf}`);
+			const imageHtml = `<img src="cid:${cid}" width="576" alt="${esc(story.image.alt || '')}" style="display:block;width:576px;max-width:100%;height:auto;margin:0 0 20px;border:0;">`;
+			const imageTarget = safeUrl(story.linkUrl);
+			imageTag = imageTarget === '#' ? imageHtml : `<a href="${imageTarget}" style="text-decoration:none;">${imageHtml}</a>`;
+		} else if (story.image?.url && safeUrl(story.image.url) !== '#') {
+			const imageHtml = `<img src="${safeUrl(story.image.url)}" width="576" alt="${esc(story.image.alt || '')}" style="display:block;width:576px;max-width:100%;height:auto;margin:0 0 20px;border:0;">`;
+			const imageTarget = safeUrl(story.linkUrl);
+			imageTag = imageTarget === '#' ? imageHtml : `<a href="${imageTarget}" style="text-decoration:none;">${imageHtml}</a>`;
+		}
+		const link = story.linkText ? `<p style="margin:0 0 8px;"><a href="${safeUrl(story.linkUrl)}" style="color:${mcSettings.accent_color};font:700 16px/24px Arial,Helvetica,sans-serif;">${esc(story.linkText)} &rarr;</a></p>` : '';
+		return `<tr><td style="padding:32px 0 0;border-top:4px solid ${mcSettings.accent_color};">${imageTag}<p style="margin:0 0 10px;color:#000;font:700 20px/28px Arial,Helvetica,sans-serif;">${esc(story.title || 'Nieuwsitem')}</p><p style="margin:0 0 14px;color:#000;font:16px/24px Arial,Helvetica,sans-serif;">${esc(story.body || '')}</p>${link}</td></tr>`;
+	}).join('');
+
+	const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>@media only screen and (max-width:620px){.mail-content{padding:26px 12px 32px!important}.mail-footer{padding:22px 12px 28px!important}.mail-title{font-size:26px!important;line-height:32px!important}}</style></head><body style="margin:0;padding:0;background:#f4f4f4;"><style>@media only screen and (max-width:620px){.mail-content{padding:26px 12px 32px!important}.mail-footer{padding:22px 12px 28px!important}.mail-title{font-size:26px!important;line-height:32px!important}}</style><div style="display:none;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#f4f4f4;">${esc(data.preheader)}</div><div style="display:none;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background:#f4f4f4;"><tr><td align="center" style="padding:24px 0;"><!--[if mso]><table role="presentation" width="660" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]--><table role="presentation" width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:660px;background:#fff;"><tr><td align="center" bgcolor="${mcSettings.accent_color}" style="padding:24px;background:${mcSettings.accent_color};"><img src="${logoUrl}" width="58" alt="${esc(mcSettings.org_name)}" style="display:block;width:58px;height:auto;border:0;"><p style="margin:10px 0 0;color:#fff;font:12px/16px Arial,sans-serif;letter-spacing:1px;">${esc(mcSettings.org_name.toUpperCase())}<strong>${esc(data.sender)}</strong></p></td></tr><tr><td class="mail-content" style="padding:36px 42px 46px;background:#fff;color:#000;font:16px/24px Arial,sans-serif;"><p class="mail-title" style="margin:0 0 24px;font-size:31px;line-height:36px;font-weight:bold;">${esc(data.title)}</p><p style="margin:0 0 10px;">Hoi muziekliefhebber,</p><p style="margin:0;">${esc(data.intro)}</p><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;">${rows}</table></td></tr><tr><td class="mail-footer" align="center" bgcolor="#111" style="padding:29px 42px 35px;background:#111;color:#fff;font:12px/18px Arial,sans-serif;"><p style="margin:0;font-size:14px;font-weight:bold;letter-spacing:1px;">${esc(data.sender)}</p><p style="margin:10px 0;color:#d0d0d0;">Je ontvangt deze mail omdat je je hebt aangemeld voor nieuws van ${esc(mcSettings.org_name)}.</p><p style="margin:10px 0;color:#d0d0d0;">${esc(mcSettings.org_name)} · ${esc(mcSettings.address_line)}</p><p style="margin:13px 0 0;"><a href="${safeUrl(data.site)}" style="color:#fff;">${esc(data.site.replace(/^https?:\/\//, ''))}</a> &nbsp; <a href="${safeUrl(data.unsubscribe)}" style="color:#fff;">Uitschrijven</a>${mcSettings.unsubscribe_email ? ` &nbsp; <a href="mailto:${esc(mcSettings.unsubscribe_email)}?body=${encodeURIComponent('Uitschrijven nieuwsbrief')}" style="color:#fff;">Uitschrijven per e-mail</a>` : ''}${mcSettings.preferences_url ? ` &nbsp; <a href="${safeUrl(mcSettings.preferences_url)}" style="color:#fff;">Voorkeuren wijzigen</a>` : ''}</p></td></tr></table><!--[if mso]></td></tr></table><![endif]--></td></tr></table></body></html>`;
+
+	const headers = `MIME-Version: 1.0${crlf}Date: ${new Date().toUTCString()}${crlf}Subject: ${data.title}${crlf}X-Unsent: 1${crlf}Content-Type: multipart/related; type="text/html"; boundary="${boundary}"`;
+	const htmlPart = `--${boundary}${crlf}Content-Type: text/html; charset=UTF-8${crlf}Content-Transfer-Encoding: 8bit${crlf}${crlf}${html}${crlf}`;
+
+	return `${headers}${crlf}${crlf}${htmlPart}${attachments.join('')}--${boundary}--${crlf}`;
+}
+</script>
+<script>
+async function loadSavedDraft(){
+	if(!currentDraftId||!wordpressDraftLoadEndpoint)return;
+	try{
+		const response=await fetch(wordpressDraftLoadEndpoint,{headers:{'X-WP-Nonce':wordpressNonce}});
+		const result=await response.json();
+		if(!response.ok)throw new Error(result.message||'Concept laden mislukt.');
+		const newsletter=result.newsletter||{};
+		for(const [selector,key] of [['#newsletter-title','title'],['#newsletter-intro','intro'],['#newsletter-preheader','preheader'],['#sender-name','sender'],['#sender-website','site'],['#unsubscribe-url','unsubscribe']]){
+			if(typeof newsletter[key]==='string')document.querySelector(selector).value=newsletter[key];
+		}
+		if(Array.isArray(newsletter.stories))stories=newsletter.stories;
+		document.querySelector('#draft-status').textContent=`Concept geladen (#${currentDraftId})`;
+		render();
+	}catch(error){notice(error.message||'Concept laden mislukt.')}
+}
+document.documentElement.style.setProperty('--red', mcSettings.accent_color);
+document.title = 'MailCreator | ' + mcSettings.org_name;
+$('#tool-eyebrow').textContent = mcSettings.org_name;
+if (mcSettings.tool_logo_url) {
+	$('#tool-brand-mark').innerHTML = `<img src="${esc(mcSettings.tool_logo_url)}" alt="${esc(mcSettings.org_name)}" style="max-width:100%;max-height:100%;object-fit:contain;">`;
+} else {
+	$('#tool-brand-mark').textContent = (mcSettings.org_name || 'M').charAt(0).toUpperCase();
+}
+$('#preview-logo').src = logoUrl;
+$('#preview-logo').alt = mcSettings.org_name;
+$('#preview-brand-org').textContent = mcSettings.org_name.toUpperCase();
+$('#preview-org-note').textContent = `Je ontvangt deze mail omdat je je hebt aangemeld voor nieuws van ${mcSettings.org_name}.`;
+$('#preview-address').textContent = `${mcSettings.org_name} · ${mcSettings.address_line}`;
+if (mcSettings.unsubscribe_email) {
+	$('#preview-unsubscribe-mail').href = `mailto:${mcSettings.unsubscribe_email}?body=${encodeURIComponent('Uitschrijven nieuwsbrief')}`;
+	$('#preview-unsubscribe-mail').style.display = '';
+}
+if (mcSettings.preferences_url) {
+	$('#preview-preferences').href = safeUrl(mcSettings.preferences_url);
+	$('#preview-preferences').style.display = '';
+}
+if (!currentDraftId) {
+	$('#sender-name').value = mcSettings.sender_name;
+	$('#sender-website').value = mcSettings.sender_website;
+	$('#unsubscribe-url').value = mcSettings.unsubscribe_url;
+}
+render();
+loadSavedDraft();
+</script>
+</body>
+</html>
